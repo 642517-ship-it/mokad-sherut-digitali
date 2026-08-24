@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מוקד שירות לקוחות דיגיטלי | אופק שירותים</title>
+<meta name="description" content="מוקד שירות לקוחות דיגיטלי של אופק שירותים — מענה מהיר יותר, מעקב מלא אחר כל פנייה וצמיחה בלי גיוס.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== משתני עיצוב — אותה זהות חזותית של המצגת ===== */
+:root{
+  --teal:#10707C;
+  --teal-dark:#0B3C43;
+  --teal-light:#3FA0A9;
+  --accent:#FF9F43;
+  --card:#F1F6F7;
+  --line:#D7E3E5;
+  --text:#1F3238;
+  --muted:#5E7379;
+  --white:#FFFFFF;
+  --radius:14px;
+  --wrap:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Heebo","Arial",sans-serif;
+  color:var(--text); background:var(--white);
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px}
+
+/* ===== כותרת עליונה ===== */
+header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(11,60,67,.96); backdrop-filter:blur(6px);
+}
+header .wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
+.logo{color:var(--white); font-weight:900; font-size:18px; letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.nav-cta{
+  color:var(--teal-dark); background:var(--accent);
+  padding:8px 18px; border-radius:999px; font-weight:700; font-size:15px; text-decoration:none;
+}
+.nav-cta:hover{filter:brightness(1.06)}
+
+/* ===== גיבור (Hero) ===== */
+.hero{
+  position:relative; overflow:hidden;
+  background:var(--teal-dark); color:var(--white);
+  padding:88px 0 96px;
+}
+.hero::before,.hero::after{
+  content:""; position:absolute; border-radius:50%; opacity:.9;
+}
+.hero::before{width:420px; height:420px; background:var(--teal); inset-inline-start:-160px; bottom:-220px}
+.hero::after{width:220px; height:220px; background:var(--teal-light); inset-inline-end:-70px; top:-110px}
+.hero .wrap{position:relative; z-index:2}
+.eyebrow{color:var(--accent); font-weight:700; font-size:15px; letter-spacing:.02em; margin-bottom:14px}
+.hero h1{
+  font-size:clamp(32px,5.4vw,56px); font-weight:900; line-height:1.15;
+  letter-spacing:-.02em; max-width:16ch;
+}
+.hero p{margin-top:18px; font-size:clamp(16px,2.1vw,20px); color:#CFE3E6; max-width:48ch}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.btn{
+  display:inline-block; border:0; cursor:pointer; text-decoration:none;
+  font-family:inherit; font-weight:700; font-size:16px;
+  padding:14px 28px; border-radius:999px; transition:transform .15s, filter .15s;
+}
+.btn-primary{background:var(--accent); color:var(--teal-dark)}
+.btn-ghost{background:transparent; color:var(--white); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
+
+/* ===== שלושת היתרונות ===== */
+.benefits{padding:72px 0 24px}
+.section-title{font-size:clamp(24px,3.4vw,34px); font-weight:900; color:var(--teal-dark); letter-spacing:-.01em}
+.section-sub{color:var(--muted); margin-top:8px; font-size:17px}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:28px 24px 26px;
+}
+/* מספרי לפני/אחרי — האלמנט המזוהה של הדף */
+.metric{display:flex; align-items:baseline; gap:10px; margin-bottom:14px}
+.metric .before{font-size:20px; color:var(--muted); text-decoration:line-through; font-weight:500}
+.metric .arrow{color:var(--accent); font-weight:900; font-size:20px}
+.metric .after{font-size:38px; font-weight:900; color:var(--teal); letter-spacing:-.02em}
+.card h3{font-size:19px; font-weight:700; color:var(--teal-dark); margin-bottom:8px}
+.card p{color:var(--muted); font-size:15.5px}
+
+/* ===== טופס יצירת קשר ===== */
+.contact{padding:72px 0 88px}
+.contact-box{
+  background:var(--teal-dark); color:var(--white);
+  border-radius:20px; padding:44px; display:grid; grid-template-columns:1fr 1.15fr; gap:44px;
+}
+.contact-box h2{font-size:clamp(24px,3.2vw,32px); font-weight:900; line-height:1.25}
+.contact-box .lead{color:#CFE3E6; margin-top:14px; font-size:16.5px}
+.contact-list{list-style:none; margin-top:24px; display:grid; gap:10px}
+.contact-list li{display:flex; align-items:center; gap:10px; color:#CFE3E6; font-size:15.5px}
+.dot{width:9px; height:9px; border-radius:50%; background:var(--accent); flex:0 0 auto}
+form{display:grid; gap:16px}
+.field{display:grid; gap:6px}
+label{font-size:14.5px; font-weight:500; color:#CFE3E6}
+input,textarea{
+  font-family:inherit; font-size:16px; color:var(--text);
+  background:var(--white); border:1.5px solid transparent; border-radius:10px;
+  padding:12px 14px; width:100%;
+}
+textarea{resize:vertical; min-height:96px}
+input:focus,textarea:focus{outline:none; border-color:var(--accent)}
+input:focus-visible,textarea:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.error{color:#FFC4A3; font-size:13.5px; min-height:1em}
+.form-note{color:#9FBDC2; font-size:13px}
+.success{
+  display:none; background:#16505A; border:1px solid var(--teal-light);
+  border-radius:12px; padding:20px; text-align:center;
+}
+.success.show{display:block}
+.success strong{display:block; font-size:19px; margin-bottom:6px}
+.success span{color:#CFE3E6; font-size:15px}
+
+/* ===== תחתית ===== */
+footer{background:var(--card); border-top:1px solid var(--line); padding:26px 0}
+footer .wrap{display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; color:var(--muted); font-size:14.5px}
+
+/* ===== מסכים קטנים ===== */
+@media (max-width:860px){
+  .grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr; padding:30px 24px}
+  .hero{padding:64px 0 72px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important; scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">אופק <span>שירותים</span></div>
+    <a class="nav-cta" href="#contact">לתיאום הדגמה</a>
+  </div>
+</header>
+
+<!-- ===== גיבור: הכותרת הראשית והמסר המרכזי ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">פרויקט חדש באופק שירותים</div>
+    <h1>מוקד שירות לקוחות דיגיטלי</h1>
+    <p>מערכת אחת לניהול כל הפניות, עם עוזר AI שמנסח טיוטות תשובה — מענה מהיר יותר, בלי שאף פנייה תיפול בין הכיסאות.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">לתיאום הדגמה</a>
+      <a class="btn btn-ghost" href="#benefits">מה זה נותן לנו</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== שלושה יתרונות, כל אחד עם מספר לפני ואחרי ===== -->
+<section class="benefits" id="benefits">
+  <div class="wrap">
+    <h2 class="section-title">שלושה דברים שישתנו</h2>
+    <p class="section-sub">היעדים שנקבעו לפרויקט, במספרים.</p>
+
+    <div class="grid">
+      <article class="card">
+        <div class="metric">
+          <span class="after">4 שעות</span>
+          <span class="arrow">←</span>
+          <span class="before">24 שעות</span>
+        </div>
+        <h3>מענה מהיר ללקוח</h3>
+        <p>כל פנייה נכנסת אוטומטית למערכת ומנותבת לנציג הנכון. בסיס ידע ועוזר AI מקצרים את זמן הכתיבה של התשובה.</p>
+      </article>
+
+      <article class="card">
+        <div class="metric">
+          <span class="after">250</span>
+          <span class="arrow">←</span>
+          <span class="before">162</span>
+        </div>
+        <h3>צמיחה בלי גיוס</h3>
+        <p>אותו צוות שירות יכול לטפל בהיקף לקוחות גדול בהרבה, כי הזמן מתפנה מטיפול ידני חוזר.</p>
+      </article>
+
+      <article class="card">
+        <div class="metric">
+          <span class="after">100%</span>
+          <span class="arrow">←</span>
+          <span class="before">מעקב חלקי</span>
+        </div>
+        <h3>שליטה מלאה בפניות</h3>
+        <p>לוח בקרה שמראה בכל רגע מה פתוח, מה מתעכב ואילו סוגי פניות חוזרים — ומאפשר לשפר את התהליך עצמו.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== טופס יצירת קשר — נשמר בטבלה ב-Supabase ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>רוצים לראות את זה עובד?</h2>
+        <p class="lead">השאירו פרטים ונחזור אליכם לתיאום הדגמה קצרה של המערכת, כולל תשובות על עלות ולוח זמנים.</p>
+        <ul class="contact-list">
+          <li><span class="dot"></span> הדגמה של כ-30 דקות, בזום או במשרד</li>
+          <li><span class="dot"></span> מענה תוך יום עסקים אחד</li>
+          <li><span class="dot"></span> ליווי מלא משלב האפיון ועד ההשקה</li>
+        </ul>
+      </div>
+
+      <div>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">שם מלא</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="ישראל ישראלי">
+            <div class="error" id="err-name"></div>
+          </div>
+          <div class="field">
+            <label for="email">אימייל</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="name@ofek.co.il">
+            <div class="error" id="err-email"></div>
+          </div>
+          <div class="field">
+            <label for="phone">טלפון (לא חובה)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="050-0000000">
+            <div class="error" id="err-phone"></div>
+          </div>
+          <div class="field">
+            <label for="message">מה חשוב לכם לדעת?</label>
+            <textarea id="message" name="message" placeholder="למשל: כמה זמן לוקחת ההטמעה, ואיך זה מתחבר למייל הקיים"></textarea>
+            <div class="error" id="err-message"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">שליחת הפרטים</button>
+          <p class="form-note">הפרטים משמשים ליצירת קשר בלבד ונשמרים בגיליון של החברה.</p>
+          <div class="error" id="err-send"></div>
+        </form>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <strong>הפרטים נשלחו</strong>
+          <span>תודה! נחזור אליכם תוך יום עסקים אחד לתיאום ההדגמה.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>אופק שירותים בע"מ — שירותי תפעול ולוגיסטיקה לעסקים</span>
+    <span>פרויקט מוקד שירות דיגיטלי | רונית אבידן, מנכ"לית</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   חיבור ל-Supabase — הפניות נשמרות בטבלה landing_leads
+   המפתח הזה הוא מפתח ציבורי (publishable) ומיועד להיות בקוד של הדפדפן.
+   הוא מאפשר הוספת פנייה בלבד — לא קריאה ולא מחיקה של נתונים קיימים.
+   ============================================================ */
+const SUPABASE_URL = 'https://osuykkkltqtelqhzuqst.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_LvpusZcf1EjaYc-QMlApmQ_9a6KnPW8';
+const TABLE = 'landing_leads';
+
+/* ===== בדיקת תקינות ושליחה ===== */
+const form = document.getElementById('contactForm');
+const success = document.getElementById('success');
+const submitBtn = document.getElementById('submitBtn');
+
+function showError(id, msg){ document.getElementById('err-' + id).textContent = msg || ''; }
+
+function validate(){
+  let ok = true;
+  ['name','email','phone','message'].forEach(f => showError(f, ''));
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if(name.length < 2){ showError('name', 'נא למלא שם מלא'); ok = false; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showError('email', 'נא למלא כתובת אימייל תקינה'); ok = false; }
+  if(phone && !/^[0-9\-+() ]{9,15}$/.test(phone)){ showError('phone', 'מספר הטלפון אינו תקין'); ok = false; }
+  if(message.length < 5){ showError('message', 'נא לכתוב במשפט אחד מה מעניין אתכם'); ok = false; }
+
+  return ok;
+}
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  showError('send', '');
+
+  if(!validate()){
+    /* מיקוד השדה הראשון שנמצא בו ליקוי */
+    const firstErr = document.querySelector('.error:not(:empty)');
+    if(firstErr) firstErr.parentElement.querySelector('input, textarea').focus();
+    return;
+  }
+
+  /* נעילת הכפתור כדי למנוע שליחה כפולה */
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'שולח...';
+
+  const lead = {
+    name:    document.getElementById('name').value.trim(),
+    email:   document.getElementById('email').value.trim(),
+    phone:   document.getElementById('phone').value.trim() || null,
+    message: document.getElementById('message').value.trim(),
+    page:    'daf-nechita-mokad-sherut'
+  };
+
+  try{
+    const res = await fetch(SUPABASE_URL + '/rest/v1/' + TABLE, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(lead)
+    });
+
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+
+    form.style.display = 'none';
+    success.classList.add('show');
+    success.scrollIntoView({block:'center'});
+
+  }catch(err){
+    showError('send', 'השליחה נכשלה. נא לנסות שוב בעוד רגע.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'שליחת הפרטים';
+  }
+});
+</script>
+
+</body>
+</html>
